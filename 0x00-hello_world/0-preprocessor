@@ -1,2 +1,2 @@
 #!/bin/bash
-$CFILE.c -o c
+$CFILE.c -o c 
