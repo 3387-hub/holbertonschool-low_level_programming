@@ -1,2 +1,2 @@
 #!/bin/bash
-as  $CFILE > main.s 
+ gcc as $CFILE > main.s 
