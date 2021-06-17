@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -c -save-temps $CFILE > main.s 
+gcc -c -S $CFILE > main.s 
