@@ -1,2 +1,2 @@
 #!/bin/bash
- as -o $CFILE > main.s 
+as -o $CFILE > main.s 
