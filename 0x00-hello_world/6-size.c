@@ -4,15 +4,15 @@ int main(void)
 
 {
 
-char chartype;
-int inttype;
-long int longinttype;
-long long int longlonginttype;
+char chart;
+int intt;
+long int longintt;
+long long int longlongintt;
 
-printf("Size of char: %lu bytes\n") sizeof(chartype);
-printf("size of int: %lu bytes\n") sizeof(inttype);
-printf("size of long int: %lu bytes\n") sizeof(loginttype);
-printf("size of long long int: %lu bytes\n") sizeof(longlonginttype);
+ printf("Size of char: %zu bytes\n" sizeof(chart));
+ printf("size of int: %zu bytes\n" sizeof(intt));
+printf("size of long int: %zu bytes\n" sizeof(logintt));
+printf("size of long long int: %zu bytes\n" sizeof(longlongintt));
 return (0);
  
 }
