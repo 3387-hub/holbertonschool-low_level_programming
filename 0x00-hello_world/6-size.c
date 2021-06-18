@@ -2,16 +2,16 @@
 
 /**
  * main - Function principal that show us the zise of the variables
- *return (0)
+ *return: always is  (0)
  */
 int main(void)
 
 {
 
-printf("Size of char: %zu bytes\n" sizeof(char));
-printf("size of int: %zu bytes\n" sizeof(int));
-printf("size of long int: %zu bytes\n" sizeof(long));
-printf("size of long long int: %zu bytes\n" sizeof(long long int));
+printf("Size of a char: %zu byte(s)\n" sizeof(char));
+printf("Size of an int: %zu byte(s)\n" sizeof(int));
+printf("Size of a long int: %zu byte(s)\n" sizeof(long));
+printf("Size of a long long int: %zu byte(s)\n" sizeof(long long int));
 return (0);
  
 }
