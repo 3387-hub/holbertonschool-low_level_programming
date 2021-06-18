@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main()
+int main(void)
+
 {
 char chartype;
 int inttype;
