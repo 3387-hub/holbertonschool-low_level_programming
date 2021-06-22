@@ -1,9 +1,13 @@
 #include <stdio.h>
 #include "holberton.h"
 
+/**
+ * main - Is the principal function that print Holberton
+ * Return: (0) Always 0 is (success)
+ */
+
 int main(void)
 {
-	
 	_putchar('H');
 	_putchar('o');
 	_putchar('l');
@@ -14,6 +18,5 @@ int main(void)
 	_putchar('o');
 	_putchar('n');
 	_putchar('\n');
-       	return (0);
-	
+	return (0);
 }
