@@ -2,7 +2,7 @@
 
 /**
 * main - causes an infinite loop
-* i++ - There is no increment
+* @i: This fuction don't have increment ++
 * Return: 0
 */
 
