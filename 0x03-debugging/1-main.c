@@ -2,7 +2,7 @@
 
 /**
 * main - causes an infinite loop
-* while: There is no increment
+* i++ - There is no increment
 * Return: 0
 */
 
