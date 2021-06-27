@@ -18,8 +18,16 @@ void print_diagonal(int n)
 			{
 			_putchar(' ');
 			}
+
 		}
+		if (e >= 1)
+		{
 		_putchar(92);
+		}
+		else
+		{
+			_putchar('\n');
+		}
 		_putchar('\n');
 	}
 }
