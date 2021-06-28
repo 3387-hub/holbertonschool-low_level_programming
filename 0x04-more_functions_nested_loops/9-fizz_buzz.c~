@@ -5,6 +5,7 @@
  * But for multiples of three print Fizz instead of the number and for the
  * multiples of five print Buzz. For numbers which are multiples of both three
  * and five print FizzBuzz.
+ *@a: This variable is equal to the number 1 to 100
  *Return: return always is (0) to success
  */
 int main(void)
@@ -32,8 +33,8 @@ int main(void)
 		{
 			printf("%d", a);
 		}
+
 		printf(" ");
 	}
-	printf("\n");
 	return (0);
 }
