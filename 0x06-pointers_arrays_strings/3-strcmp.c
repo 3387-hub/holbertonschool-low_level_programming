@@ -30,7 +30,8 @@ int _strcmp(char *s1, char *s2)
 	}
 	for (indx = 0; indx < size1 && indx < size2 && indx != '\0'; indx++)
 	{
+		return (0);
 	}
-	return (0);
+
 
 }
