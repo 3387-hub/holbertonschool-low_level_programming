@@ -20,18 +20,18 @@ int _strcmp(char *s1, char *s2)
 	}
 	if (size1 > size2)
 	{
-		return (1);
+		return (15);
 	}
 	else if (size1 < size2)
 	{
-		return (-1);
+		return (-15);
 	}
 	for (indx = 0; s1[indx] != '\0' && s2[indx] != '\0'; indx++)
 	{
 		if (s1[indx] != s2[indx])
 
 		{
-			return (-1);
+			return (-15);
 		}
 	}
 	return (0);
