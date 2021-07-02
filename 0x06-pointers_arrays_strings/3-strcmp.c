@@ -18,18 +18,21 @@ int _strcmp(char *s1, char *s2)
 	for (size2 = 0; s2[size2] != '\0'; size2++)
 	{
 	}
-
 	if (size1 > size2)
 	{
-		return (15);
+		return (1);
 	}
-
 	else if (size1 < size2)
 	{
-		return (-15);
+		return (-1);
 	}
-	for (indx = 0; indx < size1 && indx < size2 && indx != '\0'; indx++)
+	for (indx = 0; s1[indx] != '\0' && s2[indx] != '\0'; indx++)
 	{
+		if (s1[indx] != s2[indx])
+
+		{
+			return (-1);
+		}
 	}
 	return (0);
 }
