@@ -1,31 +1,34 @@
 #include "holberton.h"
-  /**
-  * *cap_string - Function that capitalizes all words of a string
-  * Return: String of type char
-  * @s: String to be reversed
-  */
- char *cap_string(char *s)
- {
- char x[13] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{',
-         '}'};
- int i;
- int j;
-   for (j = 0; x[j] != '\0'; j++)
- {
-         if (s[i] >= 97 && s[i] <= 122)
-         {
-                 s[i] = s[i] - 32;
-         }
-         for (i = 0; s[i] != '\0'; i++)
-         {
-                 if (s[i] == x[j])
-                 {
-                         if (s[i + 1] >= 97 && s[i + 1] <= 122)
-                         {
-                                 s[i + 1] = s[i + 1] - 32;
-                         }
-                 }
-         }
- }
- return (s);
- }
+/**
+ * cap_string - capitalizes the words of a string
+ * @str: string to capitalize
+ * Return: changed string
+ */
+
+char *cap_string(char *str)
+{
+	int i, j;
+	char points[13] = {
+		',', ';', '.', '!', '?',
+		'(', ')', '{', '}', ' ',
+		'\t', '\n', '"'};
+	if (str == 0)
+		return (0);
+	if (str[0] >= 'a' && str[0] <= 'z')
+	{
+		str[0] = str[0] - 32;
+	}
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		for (j = 0; points[j] != '\0'; j++)
+		{
+			if (str[i] == points[j])
+			{
+				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
+				{
+					str[i + 1] -= 32;
+				}
+			}
+		}
+	}    return (str);
+}
