@@ -15,6 +15,9 @@ char *cap_string(char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
+		if (s[i] >= 97 && s[i] <= 122)
+		{
+		}
 		for (i2 = 0; x[i2] != '\0'; i2++)
 		{
 			if (s[i] == x[i2])
