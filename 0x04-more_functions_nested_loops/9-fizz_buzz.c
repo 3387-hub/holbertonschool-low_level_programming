@@ -33,6 +33,6 @@ int main(void)
 			printf("%d ", a);
 		}
 	}
-	printf("\n");
+	printf("Buzz\n");
 	return (0);
 }
