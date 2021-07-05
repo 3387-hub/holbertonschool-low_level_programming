@@ -3,14 +3,14 @@
  * _strspn - This function gets the length of a prefix substring.
  *@s: we compare it with accept for get the number of bytes that these have
  *in common.
- *@accept:
+ *@accept: is the valor to check with s.
  *Return: Always unsigned int ()
  */
 
 unsigned int _strspn(char *s, char *accept)
 
 {
-        int e;
+	int e;
 	int i;
 	int fined = 1;
 
@@ -22,6 +22,10 @@ unsigned int _strspn(char *s, char *accept)
 			if (accept[i] == s[e])
 				fined = 1;
 		}
+	}
+	if (e == 0)
+	{
+		return (0);
 	}
 	return ((unsigned int) e - 1);
 }
