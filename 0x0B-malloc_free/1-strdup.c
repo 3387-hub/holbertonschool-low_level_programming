@@ -38,4 +38,5 @@ char *_strdup(char *str)
 /*This assignment below it's why i need add the '\0' to the end of the string*/
 	pointer[i] = '\0';
 	return (pointer);
+	free (pointer);
 }
