@@ -6,6 +6,7 @@
  *with a specific char.
  *@size: is the size of my string.
  *@c: is the character which my function initialices.
+ *Return: Always is a pointer, in this case is str.
  */
 
 char *create_array(unsigned int size, char c)
@@ -18,7 +19,7 @@ char *create_array(unsigned int size, char c)
 	{
 		return (NULL);
 	}
-	str = malloc (sizeof(char) * size);
+	str = malloc(sizeof(char) * size);
 	if (str == NULL)
 	{
 		return (NULL);
