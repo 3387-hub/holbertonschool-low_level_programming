@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "dog.h"
 /**
  * print_dog - This function prints dog if it isn't NULL.
@@ -18,7 +19,5 @@ void print_dog(struct dog *d)
 		{
 			d->owner = "(nil)";
 		}
-	}
-	printf("Name %s\nAge %f\nOwner %s\n", d->name, d->age, d->owner);
-
+	       printf("Name %s\nAge %f\nOwner %s\n", d->name, d->age, d->owner);
 }
