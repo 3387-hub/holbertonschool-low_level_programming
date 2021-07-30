@@ -28,13 +28,6 @@ size_t print_list(const list_t *h)
 		}
 		h = h->next;
 		counter = counter + 1;
-
-
 	}
-
-
-
-	return(counter);
-
-
+	return (counter);
 }
