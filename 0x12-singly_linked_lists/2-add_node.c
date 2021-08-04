@@ -4,7 +4,7 @@
 #include "lists.h"
 /**
  *add_node - This function adds a new node at the beginning of a list_t list.
- *@head: This is my double pointer to a pointer to a content of head
+ *@head: This is my double pointer to a pointer to a content of head.
  *@str: This is the str to assing the new head.
  *Return: Always is *head.
  */
