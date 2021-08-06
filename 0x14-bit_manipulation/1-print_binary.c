@@ -6,7 +6,7 @@
  */
 void print_binary(unsigned long int n)
 {
-	int c, result, j;
+	int c, j, result;
 
 	for (c = 0; n >> c; c++)
 	{
@@ -28,4 +28,5 @@ void print_binary(unsigned long int n)
 			_putchar('0');
 		}
 	}
+	return ();
 }
