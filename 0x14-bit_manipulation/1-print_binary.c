@@ -8,27 +8,32 @@
  */
 void print_binary(unsigned long int n)
 {
-	int c, result;
-	int j;
+	int i;
+	int res;
+	int digits = 0;
+	unsigned long int dec = n;
 
-	for (c = 0; n >> c; c++)
+	while (n)
 	{
-		result = n >> c;
+
+		n = n >> 1;
+		digits++;
 	}
-	if (n == 0)
+	for (i = digits - 1; i >= 0; i--)
 	{
-		putchar('0');
-	}
-	for (j = c - 1; j >= 0; j--)
-	{
-		result = n >> j;
-		if (result & 1)
+		res = dec >> i;
+
+		if (res & 1)
 		{
-			putchar('1');
+			_putchar('1');
 		}
 		else
 		{
-			putchar('0');
+			_putchar('0');
 		}
+	}
+	if (dec == 0)
+	{
+		_putchar('0');
 	}
 }
