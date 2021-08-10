@@ -286,20 +286,7 @@ Write a program that copies the content of a file to another file.
 							    You are allowed to use dprintf
 
 julien@ubuntu:~/0x15. File descriptors and permissions$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 3-cp.c -o cp
-julien@ubuntu:~/0x15. File descriptors and permissions$ cat incitatous
-Why you should think twice before putting pictures on social media.
-(What you always wanted to know about @Incitatous)
-#PrivacyAware
-http://imgur.com/a/Mq1tc
-julien@ubuntu:~/0x15. File descriptors and permissions$ ./cp incitatous Incitatous
-julien@ubuntu:~/0x15. File descriptors and permissions$ ls -l Incitatous
--rw-rw-r-- 1 julien julien 158 Dec  3 15:39 Incitatous
-julien@ubuntu:~/0x15. File descriptors and permissions$ cat Incitatous
-Why you should think twice before putting pictures on social media.
-(What you always wanted to know about @Incitatous)
-#PrivacyAware
-http://imgur.com/a/Mq1tc
-julien@ubuntu:~/0x15. File descriptors and permissions$
+
 
 Repo:
 
