@@ -1,19 +1,6 @@
-#ifndef
-#define main
-#include <stddef.h>
-#include <stdlib.h>
-#include <stdlib.h>
-
-/* dprintf */
-#include <stdio.h>
-
-/* open */
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-
-/* read, close comands */
-#include <unistd.h>
+#ifndef MAIN_H
+#define MAIN_H
+#include "main.h"
 
 int _putchar(char c);
 ssize_t read_textfile(const char *filename, size_t letters);
