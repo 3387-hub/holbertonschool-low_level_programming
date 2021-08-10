@@ -15,15 +15,15 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 
 {
-	int buff[4000];
-	int fd, fd1, fd2;
+	char buff[4000];
+	int fd = 0, fd1 = 0, fd2 = 0;
 
 	if(filename == NULL)
 	{
 		return (0);
 	}
 
-	fd = open(filename, O_RDONLY, S_IRUSR);
+	fd = open(filename, O_RDONLY);
 
 	if(fd == -1)
 	{
@@ -36,7 +36,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		return (0);
 	}
-	fd2= write (fd, buff, letters);
+	fd2= write(STDOUT_FILENO, buff, fd1);
 
 	if (fd2 == -1)
 	{
