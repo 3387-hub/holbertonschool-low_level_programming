@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  *_isdigit - This function checks for a digit (0 to 9)
  *@c: This variable is a character of the table Ascii

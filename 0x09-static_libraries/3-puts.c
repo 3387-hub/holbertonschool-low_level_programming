@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * _puts - This function prints a string.
  * @str: is the variable which give the string to print

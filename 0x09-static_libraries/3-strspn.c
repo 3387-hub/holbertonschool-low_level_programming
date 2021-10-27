@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * _strspn - This function gets the length of a prefix substring.
  *@s: we compare it with accept for get the number of bytes that these have

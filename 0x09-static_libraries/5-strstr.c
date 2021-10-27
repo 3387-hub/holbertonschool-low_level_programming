@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 #include <stddef.h>
 /**
  * _strstr - This function locate a substring
