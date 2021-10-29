@@ -1,54 +1,51 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
+
 /**
- * string_nconcat - Function that concatenates two strings.
- * Return: Pointer to newly allocated space in memory.
- * which contains s1, followed by the first n bytes of s2,
- * and null terminated.
- * @s1: String to be concatenated.
- * @s2: String to be appended.
- * @n: Number of bytes from s2 to be appended.
+ * string_nconcat - created new array using malloc().
+ * @s1: chain of chars one.
+ * @s2: chain of chars two.
+ * @n : number of chars to use of s2.
+ * Return: new pointer with s1 and s2 added.
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int i;
-	int len;
-	unsigned int len2;
-	unsigned int j;
-	char *newstr;
+	int i = 0;
+	unsigned int j = 0;
+	char *stringMalloc = "";
 
-	if (s1 == NULL)
-	{
-		s1 = "";
-	}
-	if (s2 == NULL)
-	{
-		s2 = "";
-	}
-	for (len = 0; s1[len] != '\0'; len++)
-	{
-	}
-	for (len2 = 0; s2[len2] != '\0'; len2++)
-	{
-	}
-	if (n >= len2)
-	{
-		n = len2;
-	}
-	newstr = malloc((sizeof(char) * (len + n)) + 1);
-	if (newstr == NULL)
+	if (s1)
+		while (s1[i])
+		{
+			i++;
+		}
+	if (s2)
+		while (s2[j] && j < n)
+		{
+			j++;
+		}
+
+	i += j;
+	stringMalloc = malloc(sizeof(char) * i + 1);
+	if (stringMalloc == NULL)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < len; i++)
-	{
-		newstr[i] = s1[i];
-	}
-	for (j = 0; j < n; j++)
-	{
-		newstr[i + j] = s2[j];
-	}
-	newstr[i + j] = '\0';
-	return (newstr);
+	i = 0;
+	if (s1)
+		while (s1[i])
+		{
+			stringMalloc[i] = s1[i];
+			i++;
+		}
+	j = 0;
+	if (s2)
+		while (s2[j] && j < n)
+		{
+			stringMalloc[i] = s2[j];
+			i++;
+			j++;
+		}
+	stringMalloc[i] = '\0';
+
+	return (stringMalloc);
 }
