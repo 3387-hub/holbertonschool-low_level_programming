@@ -2,54 +2,53 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- *string_nconcat - This function contatenates two string
- *@s1: This is my first string to concatenate with s2.
- *@s2: This is my seond string to concatenate with s1.
- *@n: This is the size of my string s2.
- *Return: if my strings aren't empty is pointer if it's then NULL.
+ * string_nconcat - Function that concatenates two strings.
+ * Return: Pointer to newly allocated space in memory.
+ * which contains s1, followed by the first n bytes of s2,
+ * and null terminated.
+ * @s1: String to be concatenated.
+ * @s2: String to be appended.
+ * @n: Number of bytes from s2 to be appended.
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
-
 {
-	char *pointer;
-	unsigned int i, j, c, x;
+	int i;
+	int len;
+	unsigned int len2;
+	unsigned int j;
+	char *newstr;
 
 	if (s1 == NULL)
 	{
 		s1 = "";
 	}
-
 	if (s2 == NULL)
 	{
 		s2 = "";
 	}
-	for (i = 0; s1[i] != '\0'; i++)
+	for (len = 0; s1[len] != '\0'; len++)
 	{
 	}
-	for (j = 0; s2[j] != '\0'; j++)
+	for (len2 = 0; s2[len2] != '\0'; len2++)
 	{
 	}
-	if (n >= j)
+	if (n >= len2)
 	{
-		n = j;
+		n = len2;
 	}
-	pointer = malloc((sizeof(char) * (i + n)) + 1);
-	if (pointer == NULL)
+	newstr = malloc((sizeof(char) * (len + n)) + 1);
+	if (newstr == NULL)
 	{
-		return (NULL);
+		return (00);
 	}
-
-	for (c = 0; c < i; c++)
+	for (i = 0; i < len; i++)
 	{
-		pointer[c] = s1[c];
+		newstr[i] = s1[i];
 	}
-
-	for (x = 0; x < n; x++)
+	for (j = 0; j < n; j++)
 	{
-		pointer[c + x] = s2[x];
+		newstr[i + j] = s2[j];
 	}
-	pointer[c + x] = '\0';
-
-	return (pointer);
+	newstr[i + j] = '\0';
+	return (newstr);
 }
