@@ -5,8 +5,8 @@
 /**
  *print_list - This function prints all elements of a list_t list
  *@h: This is the pointer to modify list_t.
- *Return:
- *
+ *Return: if h->str == NULL it returns [0] (nil), otherwise it return
+ *counter(that is the number of nodes).
  *
  */
 
