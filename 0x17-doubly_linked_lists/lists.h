@@ -5,7 +5,6 @@
 
 
 
-
 /**
  * struct dlistint_s - doubly linked list
  * @n: integer
