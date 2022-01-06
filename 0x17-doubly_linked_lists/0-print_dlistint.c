@@ -30,7 +30,7 @@ size_t print_dlistint(const dlistint_t *h)
 			printf("%d", h->n);
 			printf("\n");
 		}
-		h = h->next->next;
+		h = h->next;
 		counter++;
 	}
 	return (counter);
