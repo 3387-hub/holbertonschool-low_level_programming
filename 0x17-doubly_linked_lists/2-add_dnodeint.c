@@ -1,6 +1,4 @@
 #include <stdlib.h>
-/* #include <string.h> */
-/* #include <stdio.h> */
 #include "lists.h"
 
 /**
@@ -26,7 +24,8 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	}
 	new_pointer->next = (*head);
 	new_pointer->n = copy_n;
-/*	new_pointer->prev = NULL*/
+/*	(*head)->prev = new_pointer;*/
+	new_pointer->prev = NULL;
 	(*head) = new_pointer;
 	return (*head);
 }
