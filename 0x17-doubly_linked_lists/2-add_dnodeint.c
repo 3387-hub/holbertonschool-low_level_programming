@@ -1,8 +1,14 @@
 #include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
+/* #include <string.h> */
+/* #include <stdio.h> */
 #include "lists.h"
 
+/**
+ *add_dnodeint - This function add a new node at the head.
+ *@head: Double pointer to the old head.
+ *@n: element type int of the old Node(head).
+ *Return: Return the pointer of the new node at the head
+ */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
 	dlistint_t *new_pointer;
@@ -20,7 +26,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	}
 	new_pointer->next = (*head);
 	new_pointer->n = copy_n;
-	new_pointer->prev = NULL
+/*	new_pointer->prev = NULL*/
 	(*head) = new_pointer;
 	return (*head);
 }
