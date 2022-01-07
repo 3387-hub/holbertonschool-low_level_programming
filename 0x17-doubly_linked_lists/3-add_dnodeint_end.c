@@ -7,7 +7,7 @@
  *add_dnodeint_end - This function  add a new node at the end
  *of the double linked list.
  *@head: This is the pointer to the head of the linked list.
- *@i: This is an int element of each node in the linked list.
+ *@n: This is an int element of each node in the linked list.
  *Return: A pointer to new node at the end of the linked list.
  */
 
