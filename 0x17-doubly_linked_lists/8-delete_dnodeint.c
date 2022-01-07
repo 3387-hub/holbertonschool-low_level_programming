@@ -13,44 +13,57 @@
 
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *current = *head, *delete;
-	unsigned int count = 0;
+	dlistint_t *firstnode;
+	unsigned int i;
+	unsigned int lenght = node_len(head);
 
-	if (!head)
-	{
+	firstnode = *head;
+	if (*head == NULL)
 		return (-1);
-	}
-	if (index == 0 && current->next != NULL)
+	if (index == 0)
 	{
-		delete = current;
-		current->next->prev = NULL;
-		*head = current->next;
-		free(delete);
+		firstnode = firstnode->next;
+		free(*head);
+		*head = firstnode;
+		if (firstnode != NULL)
+			firstnode->prev = NULL;
 		return (1);
 	}
-	else if (index == 0)
+	for (i = 0; i <= index - 1; i++)
 	{
-		free(head);
+		firstnode = firstnode->next;
+		if (!firstnode)
+			return (-1);
+	}
+	if (lenght - 1 == index)
+	{
+		firstnode->prev->next = NULL;
+		free(firstnode);
 		return (1);
 	}
-		while (current->next)
-	{
-		if (count == index)
-		{
-			delete = current;
-			current->next->prev = current->prev;
-			current->prev->next = current->next;
-		}
-		current = current->next;
-		count = count + 1;
-	}
-	if (count == index)
-	{
-		current->prev->next = NULL;
-		delete = current;
-	}
-	if (index > count)
-		return (-1);
-	free(delete);
+	firstnode->prev->next = firstnode->next;
+	firstnode->next->prev = firstnode->prev;
+	free(firstnode);
 	return (1);
+}
+
+/**
+* node_len - Count nodes
+* @node: double pointer
+* Return: int
+*/
+
+unsigned int node_len(dlistint_t **node)
+{
+	unsigned int length = 0;
+	dlistint_t *firstnode;
+
+	firstnode = *node;
+	while (firstnode != NULL)
+	{
+	length += 1;
+	firstnode = firstnode->next;
+	}
+	return (length);
+
 }
