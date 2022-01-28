@@ -19,7 +19,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index = 0;
 
 	if (ht == NULL || key == NULL || ht->array == NULL
-	|| *key == '\0' || value == NULL)
+	|| ht->size == 0 || *key == '\0' || value == NULL)
 		return (0);
 
 	cp_value = (char *)value;
