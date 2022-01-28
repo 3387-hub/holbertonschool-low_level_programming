@@ -19,12 +19,21 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index = 0;
 
 	if (ht == NULL || key == NULL || ht->array == NULL
-	|| ht->size == 0 || *key == '\0' || value == NULL)
+	|| *key == '\0' || value == NULL)
 		return (0);
 
 	cp_value = (char *)value;
 	index = key_index((unsigned char *)key, ht->size);
-
+	
+	if (ht->array[index] != NULL){
+		if (ht->array[index]->key == key)
+		{
+			ht->array[index]->value = cp_value;
+			if (ht->array[index]->value == NULL)
+				return (0);
+			return (1);
+		}
+	}
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
 		return (0);
