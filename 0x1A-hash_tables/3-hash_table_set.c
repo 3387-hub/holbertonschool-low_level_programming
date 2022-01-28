@@ -28,16 +28,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	index = key_index((unsigned char *)key, ht->size);
 	tmp = ht->array[index];
-	while (tmp != NULL)
-	{
-		if (strcmp(ht->array[index]->key, cp_key) == 0)
-		{
-			free(tmp->value);
-			tmp->value = cp_value;
-			return (1);
-		}
-		tmp = tmp->next;
-	}
+	if (key_update(tmp, cp_key, cp_value) == 1)
+		return (1);
 	if (ht->array[index] == NULL)
 	{
 		new_node = new_node_fc(cp_key, cp_value);
@@ -77,4 +69,26 @@ hash_node_t *new_node_fc(const char *key, char *cp_value)
 	new_node->next = NULL;
 
 	return (new_node);
+}
+
+/**
+ * key_update - This function update key in case of match node->key
+ * @tmp:  pointer to index that compare in hash table.
+ * @cp_key: key to search coincidences.
+ * @cp_value: value to update the node in linked list of hash table.
+ * Return: int 1 in success.
+ */
+int key_update(hash_node_t *tmp, char *cp_key, char *cp_value)
+{
+	while (tmp != NULL)
+	{
+		if (strcmp(tmp->key, cp_key) == 0)
+		{
+			free(tmp->value);
+			tmp->value = cp_value;
+			return (1);
+		}
+		tmp = tmp->next;
+	}
+	return (0);
 }
