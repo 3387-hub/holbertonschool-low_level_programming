@@ -12,11 +12,11 @@ void hash_table_delete(hash_table_t *ht)
 	hash_node_t *tmp = NULL;
 	unsigned long i = 0;
 
+	if (ht == NULL)
+		return;
 
 	for (; i < ht->size; i++)
 	{
-		if (ht == NULL)
-			return;
 		while (ht->array[i] != NULL)
 		{
 			tmp = ht->array[i]->next;
