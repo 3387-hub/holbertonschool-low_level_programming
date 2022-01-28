@@ -29,8 +29,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			free(ht->array[index]->value);
 			ht->array[index]->value = cp_value;
-			if (!ht->array[index]->value)
-				return (0);
 			return (1);
 		}
 	}
@@ -50,8 +48,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		new_node->next->key = tmp->key;
 		new_node->next->value = tmp->value;
 		ht->array[index] = new_node;
-		if (!ht->array[index])
-			return (0);
 		return (1);
 	}
 	return (0);
