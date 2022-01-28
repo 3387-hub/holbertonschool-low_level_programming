@@ -33,18 +33,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht->array[index] == NULL)
 	{
 		ht->array[index] = new_node;
+		if (!ht->array[index])
+			return (0);
 		return (1);
 	}
-	if (ht->array[index] != NULL)
+	else if (ht->array[index]->value != NULL)
 	{
 		tmp = ht->array[index];
 		new_node->next = tmp;
 		new_node->next->key = tmp->key;
 		new_node->next->value = tmp->value;
-		new_node->next->next = NULL;
 		ht->array[index] = new_node;
+		if (!ht->array[index])
+			return (0);
+		return (1);
 	}
-	else
-		return (0);
-	return (1);
+	return (0);
 }
