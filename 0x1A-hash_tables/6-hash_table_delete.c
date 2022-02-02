@@ -3,30 +3,41 @@
 #include <string.h>
 #include <stdio.h>
 /**
- *hash_table_delete - function that delete a hash table
- * @ht: pointer hash table to delete.
- * Return: None is void.
+ * free_list - Function  that frees a hash_table_t list
+ * @head: pointer to the head of the list to be freed
+ * Return: Void
+ */
+void free_list(hash_node_t *head)
+{
+	hash_node_t *tmp;
+
+	while (head)
+	{
+		tmp = head->next;
+		free(head->value);
+		free(head->key);
+		free(head);
+		head = tmp;
+	}
+}
+/**
+ * hash_table_delete -Function that deletes a hash table.
+ * Return: Void
+ * @ht: Hash table
  */
 void hash_table_delete(hash_table_t *ht)
 {
-	hash_node_t *tmp = NULL;
-	unsigned long i = 0;
+	unsigned long int i;
 
 	if (ht == NULL)
+	{
 		return;
-
-	for (; i < ht->size; i++)
+	}
+	for (i = 0; i < ht->size; i++)
 	{
 		if (ht->array[i] != NULL)
 		{
-			while (ht->array[i] != NULL)
-			{
-				tmp = ht->array[i]->next;
-				free(ht->array[i]->value);
-				free(ht->array[i]->key);
-				free(ht->array[i]);
-				ht->array[i] = tmp;
-			}
+			free_list(ht->array[i]);
 		}
 	}
 	free(ht->array);
