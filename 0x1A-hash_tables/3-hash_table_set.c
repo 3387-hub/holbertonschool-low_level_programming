@@ -33,7 +33,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	tmp = ht->array[index];
 	if (key_update(tmp, cp_key, cp_value) == 1)
 		return (1);
-
+		
 	if (ht->array[index] == NULL)
 	{
 		new_node = new_node_fc(cp_key, cp_value);
@@ -72,18 +72,6 @@ hash_node_t *new_node_fc(const char *key, char *cp_value)
 	new_node->key = (char *)key;
 	new_node->next = NULL;
 
-	if (!new_node->key)
-	{
-		free(new_node);
-		returnn (NULL);
-	}
-
-	if (!new_node->value)
-	{
-		free(new_node->key);
-		free(new_node);
-		return (NULL);
-	}
 	return (new_node);
 }
 
